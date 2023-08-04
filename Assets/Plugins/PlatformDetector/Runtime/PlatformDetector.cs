@@ -17,8 +17,11 @@ public enum DevicePlatform
 
 public class PlatformDetector
 {
+
+#if UNITY_WEBGL
     [DllImport("__Internal")]
     private static extern int WebGLPlatform();
+#endif
 
     public static DevicePlatform Platform()
     {
